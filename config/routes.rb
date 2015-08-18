@@ -1,9 +1,17 @@
 Rails.application.routes.draw do
+  resources :microposts
+  # As with users, the resources :microposts routing rule maps micropost URLs to actions 
+  # in the Microposts controller
+  resources :users
+  # The code to create the mapping of user URLs to controller actions for the Users 
+  # resource appears in Listing 2.2; this code effectively sets up the table of URL/
+  # action pairs seen in Table 2.1.s
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  root 'application#hello'
+  root 'users#index'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
